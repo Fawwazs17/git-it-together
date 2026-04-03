@@ -1,0 +1,193 @@
+/* =============================================
+   Git It Together — Team Profile Styles
+   Theme: Git It Good Innit — Kingsman Gold
+   ============================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary: #c5a355;
+  --primary-light: #f5f0e8;
+  --text: #1a1a1a;
+  --text-muted: #5c5347;
+  --bg: #f5f0e8;
+  --card-bg: #fffdf8;
+  --border: #d4c9b5;
+  --radius: 16px;
+  --navy: #1a2744;
+  --navy-deep: #0f1a2e;
+  --gold-light: #d4b96e;
+  --gold-dark: #a8892e;
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* Header */
+header {
+  background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 50%, #253658 100%);
+  color: white;
+  text-align: center;
+  padding: 3.5rem 2rem 2.5rem;
+  border-bottom: 3px solid var(--primary);
+  position: relative;
+}
+
+header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(ellipse at center, rgba(197, 163, 85, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.4rem;
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+
+header p {
+  color: var(--gold-light);
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+/* Main grid */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+main h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: var(--navy);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* Team grid */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Each member is loaded in an iframe — the iframe IS the card */
+.member-frame {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  width: 100%;
+  height: 380px;
+  display: block;
+  background: var(--card-bg);
+  border-top: 3px solid var(--primary);
+  transition: box-shadow 0.25s, transform 0.25s;
+}
+
+.member-frame:hover {
+  box-shadow: 0 12px 32px rgba(26, 39, 68, 0.12);
+  transform: translateY(-3px);
+}
+
+/* Member card — rendered inside each memberN.html */
+.member-card {
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+
+.member-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--primary-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  margin: 0 auto 1rem;
+  border: 3px solid var(--primary);
+}
+
+.member-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.2rem;
+}
+
+.member-role {
+  font-size: 0.9rem;
+  color: var(--gold-dark);
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.member-bio {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+  line-height: 1.7;
+}
+
+.fun-fact {
+  background: var(--primary-light);
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  font-size: 0.88rem;
+  color: var(--text);
+  margin-bottom: 0.75rem;
+  border-left: 3px solid var(--primary);
+}
+
+.fun-fact span {
+  font-weight: 600;
+}
+
+.fav-emoji {
+  font-size: 1.6rem;
+  margin-top: 0.5rem;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem;
+  color: var(--gold-light);
+  font-size: 0.9rem;
+  border-top: 2px solid var(--primary);
+  margin-top: 2rem;
+  background: var(--navy-deep);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+}
